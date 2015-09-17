@@ -87,13 +87,14 @@
     <ClCompile Include="AStar.cpp" />
     <ClCompile Include="BaseGameEntity.cpp" />
     <ClCompile Include="Cow.cpp" />
+    <ClCompile Include="CowSearchForWeaponState.cpp" />
+    <ClCompile Include="CowWanderingState.cpp" />
     <ClCompile Include="Edge.cpp" />
     <ClCompile Include="FWApplication.cpp" />
     <ClCompile Include="Graph.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="Rabbit.cpp" />
-    <ClCompile Include="State.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="SDL2.dll" />
@@ -103,6 +104,8 @@
     <ClInclude Include="BaseGameEntity.h" />
     <ClInclude Include="Cow.h" />
     <ClInclude Include="Config.h" />
+    <ClInclude Include="CowSearchForWeaponState.h" />
+    <ClInclude Include="CowWanderingState.h" />
     <ClInclude Include="Edge.h" />
     <ClInclude Include="FWApplication.h" />
     <ClInclude Include="Graph.h" />
@@ -110,6 +113,7 @@
     <ClInclude Include="Node.h" />
     <ClInclude Include="Rabbit.h" />
     <ClInclude Include="State.h" />
+    <ClInclude Include="StateMachine.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

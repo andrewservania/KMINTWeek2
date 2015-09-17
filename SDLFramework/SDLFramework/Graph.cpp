@@ -61,7 +61,7 @@ Graph::Graph(FWApplication* _application)
 	cow = new Cow(1);													// Create a cow
 	rabbit = new Rabbit();												// Create a rabbit 
 
-	cow->setNode(graphNodes.at(rand() % 8));							// Put the cow on a random node on the screen
+	cow->setCurrentNode(graphNodes.at(rand() % 8));							// Put the cow on a random node on the screen
 	rabbit->setCurrentNode(graphNodes.at(rand() % 8));					// Put the rabbit on a random node on the screen
 	
 	while (cow->getCurrentNode()->id == rabbit->getCurrentNode()->id)	// if rabbit's current node is equal to the node of the code, pick a new node for the rabbit

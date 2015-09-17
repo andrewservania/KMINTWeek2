@@ -3,7 +3,8 @@
 #include "AStar.h"
 #include <string>
 #include <memory>
-
+#include <assert.h>
+#include "CowWanderingState.h"
 using namespace std;
 
 Cow::Cow(int id) : BaseGameEntity(id)
@@ -12,21 +13,30 @@ Cow::Cow(int id) : BaseGameEntity(id)
 	mApplication->AddRenderable(this);
 	mX = 100;
 	mY = 100;
+
+	// Add sample code here that is responsible for updating the cow
+	// Set up the state machine
+	stateMachine = new StateMachine<Cow>(this);
+
+	stateMachine->SetCurrentState(CowWanderingState::Instance());
+	//stateMachine->SetGlobalState()
 }
 
 
 void Cow::Update(float deltaTime)
 {
 
+	stateMachine->Update();
 }
 
 
 Cow::~Cow()
 {
+	delete stateMachine;
 }
 
 
-void Cow::setNode(Node* node)
+void Cow::setCurrentNode(Node* node)
 {
 	 currentNode = node; 
 	 mX = node->GetBoundingBox().x;
@@ -66,7 +76,7 @@ void Cow::OnLeftClick(SDL_Event &event)
 	while (!shortestPath.empty())
 	{
 		Node* step = shortestPath.top();		// Get the next node to go to.	
-		this->setNode(step);					// Set the cow's node to the next node to go to
+		this->setCurrentNode(step);					// Set the cow's node to the next node to go to
 		shortestPath.pop();
 	}
 
@@ -76,4 +86,13 @@ void Cow::OnLeftClick(SDL_Event &event)
 void Cow::OnRightClick(SDL_Event &event)
 {
 	printf("Right-clicked on cow!\n");
+}
+
+void Cow::ChangeState(State<Cow>* newState)
+{
+
+	// to make sure both states are valid before attempting to
+	// call their methods
+	//assert(currentState && newState);
+
 }

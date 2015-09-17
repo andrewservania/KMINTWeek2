@@ -41,7 +41,10 @@
     <ClCompile Include="BaseGameEntity.cpp">
       <Filter>Week2</Filter>
     </ClCompile>
-    <ClCompile Include="State.cpp">
+    <ClCompile Include="CowWanderingState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CowSearchForWeaponState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -80,6 +83,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="State.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StateMachine.h">
+      <Filter>Week2</Filter>
+    </ClInclude>
+    <ClInclude Include="CowWanderingState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CowSearchForWeaponState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

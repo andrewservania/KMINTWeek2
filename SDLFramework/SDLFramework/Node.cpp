@@ -46,7 +46,7 @@ Node* Node::AddEdge(Node* child, int weight)
 
 	edge->xStart = this->mX;
 	edge->yStart = this->mY;
-
+	
 	edge->xEnd = child->mX;
 	edge->yEnd = child->mY;
 

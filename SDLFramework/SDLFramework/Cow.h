@@ -2,12 +2,14 @@
 #include <SDL_events.h> // Note: You need to use <SDL_events.h> and NOT <SDL.H>
 #include "BaseGameEntity.h"
 #include "Node.h"
+#include "StateMachine.h"
 
 class Cow :
 	public BaseGameEntity
 {
 public:
 	Node* currentNode;
+	StateMachine<Cow>* stateMachine;
 
 	Cow(int id);
 	~Cow();
@@ -16,7 +18,10 @@ public:
 	void OnClick(SDL_Event &event);
 	void OnLeftClick(SDL_Event &event);
 	void OnRightClick(SDL_Event &event);
-	void setNode(Node* node);
+	void setCurrentNode(Node* node);
 	Node* getCurrentNode() { return currentNode; };
+
+	void ChangeState(State<Cow>* newState);
+	StateMachine<Cow>* GetFSM() const { return stateMachine; }
 };
 
