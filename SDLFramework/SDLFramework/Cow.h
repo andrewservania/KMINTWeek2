@@ -1,15 +1,15 @@
 #pragma once
 #include <SDL_events.h> // Note: You need to use <SDL_events.h> and NOT <SDL.H>
-#include "IGameObject.h"
+#include "BaseGameEntity.h"
 #include "Node.h"
 
 class Cow :
-	public IGameObject
+	public BaseGameEntity
 {
 public:
 	Node* currentNode;
 
-	Cow();
+	Cow(int id);
 	~Cow();
 	virtual void Update(float deltaTime) override;
 	virtual void Draw()override;

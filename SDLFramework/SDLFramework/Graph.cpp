@@ -58,7 +58,7 @@ Graph::Graph(FWApplication* _application)
 	graphNodes.push_back(node7);
 	graphNodes.push_back(node8);
 
-	cow = new Cow();													// Create a cow
+	cow = new Cow(1);													// Create a cow
 	rabbit = new Rabbit();												// Create a rabbit 
 
 	cow->setNode(graphNodes.at(rand() % 8));							// Put the cow on a random node on the screen
