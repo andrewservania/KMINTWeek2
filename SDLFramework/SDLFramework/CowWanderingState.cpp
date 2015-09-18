@@ -31,6 +31,8 @@ void CowWanderingState::Exit(Cow* cow)
 {
 }
 
+
+
 CowWanderingState::~CowWanderingState()
 {
 }

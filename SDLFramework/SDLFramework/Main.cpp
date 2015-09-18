@@ -5,14 +5,11 @@
 #include <time.h>
 #include "AStar.h"
 #include "Graph.h"
-
-
-
+#include "Dashboard.h"
 
 
 int main(int args[])
 {
-
 	srand(static_cast<unsigned int>(time(nullptr)));						// initialize random seed 
 
 	auto application = new FWApplication();
@@ -25,6 +22,7 @@ int main(int args[])
 	application->SetTargetFPS(60);
 
 	auto graph = new Graph(application);									// Create a graph
+	auto dashboard = new Dashboard();										// To show some statistics such as shortestPath, Cow state and rabbit state
 
 	while (application->IsRunning())
 	{
@@ -55,14 +53,11 @@ int main(int args[])
 				case SDL_MOUSEBUTTONDOWN:				
 					graph->cow->OnClick(event);								// Handle mouse clicks for the cow
 					break;
-
-
 			}
 		}
 		
 		application->SetColor(Color(0, 0, 0, 255));							// White color
-		application->DrawText("Andrew Servania - KMINT Week 1", 150, 50);
-		graph->DrawShortPathDescription();
+		dashboard->Update();
 		// For the background
 		application->SetColor(Color(255, 255, 255, 255));					// Black color
 		application->UpdateGameObjects();

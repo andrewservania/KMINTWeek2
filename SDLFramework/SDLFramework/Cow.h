@@ -20,8 +20,7 @@ public:
 	void OnRightClick(SDL_Event &event);
 	void setCurrentNode(Node* node);
 	Node* getCurrentNode() { return currentNode; };
-
-	void ChangeState(State<Cow>* newState);
 	StateMachine<Cow>* GetFSM() const { return stateMachine; }
+	std::string GetCurrentState() { return stateMachine->CurrentState()->GetStateName(); }
 };
 

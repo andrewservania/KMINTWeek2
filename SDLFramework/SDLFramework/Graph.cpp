@@ -2,13 +2,14 @@
 #include <memory>
 #include "AStar.h"
 #include <string>
+#include "Dashboard.h"
 
 using namespace std;
 
 Cow* Graph::cow;
 Rabbit* Graph::rabbit;
 vector<Node*> Graph::graphNodes;
-string Graph::shortestPathLabel;
+
 
 Graph::Graph(FWApplication* _application)
 {
@@ -61,11 +62,13 @@ Graph::Graph(FWApplication* _application)
 	cow = new Cow(1);													// Create a cow
 	rabbit = new Rabbit();												// Create a rabbit 
 
-	cow->setCurrentNode(graphNodes.at(rand() % 8));							// Put the cow on a random node on the screen
+	 pill = new Pill();
+	 weapon = new Weapon();
+	cow->setCurrentNode(graphNodes.at(rand() % 8));					    // Put the cow on a random node on the screen
 	rabbit->setCurrentNode(graphNodes.at(rand() % 8));					// Put the rabbit on a random node on the screen
 	
 	while (cow->getCurrentNode()->id == rabbit->getCurrentNode()->id)	// if rabbit's current node is equal to the node of the code, pick a new node for the rabbit
-			rabbit->setCurrentNode(graphNodes.at(rand() % 8));
+		rabbit->setCurrentNode(graphNodes.at(rand() % 8));
 
 	UpdateShortPathDescription();										// Update the shortest path label with the shortest path based on the cow and rabbit's current node
 
@@ -75,18 +78,13 @@ Graph::~Graph()
 {
 }
 
-// Draw the shortest path on the screen
-void Graph::DrawShortPathDescription()
-{
-	FWApplication::GetInstance()->DrawText(shortestPathLabel, 200, 500);
-}
 
 // Calculate and shortest path from the cow to the rabbit and update the shortest path label on the screen
 void Graph::UpdateShortPathDescription()
 {
 	shared_ptr<AStar> aStar = make_shared<AStar>();
 	auto shortestPath = aStar->GetShortestPath(cow->getCurrentNode(), rabbit->getCurrentNode());
-	shortestPathLabel = "Shortest path from cow to rabbit: ";
+	string shortestPathLabel = "Shortest path from cow to rabbit: ";
 	while (!shortestPath.empty())
 	{
 		Node* step = shortestPath.top();
@@ -97,4 +95,6 @@ void Graph::UpdateShortPathDescription()
 		if (!shortestPath.empty())
 			shortestPathLabel += " -> ";		
 	}
+
+	Dashboard::Instance()->ShortestPathLabel(shortestPathLabel);
 }
