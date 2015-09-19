@@ -61,7 +61,7 @@ Graph::Graph(FWApplication* _application)
 	graphNodes.push_back(node8);
 
 	cow = new Cow(1);													// Create a cow
-	rabbit = new Rabbit();												// Create a rabbit 
+	rabbit = new Rabbit(2);												// Create a rabbit 
 
 	pill = new Pill();													// Create a pill at a random location
 	weapon = new Weapon();												// Create a weapon at a random location

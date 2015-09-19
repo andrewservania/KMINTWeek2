@@ -1,16 +1,16 @@
 #pragma once
-#include "IGameObject.h"
+#include "BaseGameEntity.h"
 #include "Node.h"
 #include "StateMachine.h"
 
 class Rabbit :
-	public IGameObject
+	public BaseGameEntity
 {
 public:
 	Node* currentNode;
 	StateMachine<Rabbit>* stateMachine;
 
-	Rabbit();
+	Rabbit(int id);
 	~Rabbit();
 	virtual void Update(float deltaTime) override;
 	virtual void Draw()override;

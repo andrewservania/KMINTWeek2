@@ -2,7 +2,7 @@
 #include "Graph.h"
 #include "RabbitWanderingState.h"
 
-Rabbit::Rabbit()
+Rabbit::Rabbit(int id) : BaseGameEntity(id)
 {
 	mTexture = mApplication->LoadTexture("rabbit-3.png");
 	mApplication->AddRenderable(this);
