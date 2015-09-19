@@ -97,6 +97,8 @@
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="Pill.cpp" />
     <ClCompile Include="Rabbit.cpp" />
+    <ClCompile Include="RabbitFleeingState.cpp" />
+    <ClCompile Include="RabbitWanderingState.cpp" />
     <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -117,6 +119,8 @@
     <ClInclude Include="Node.h" />
     <ClInclude Include="Pill.h" />
     <ClInclude Include="Rabbit.h" />
+    <ClInclude Include="RabbitFleeingState.h" />
+    <ClInclude Include="RabbitWanderingState.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="StateMachine.h" />
     <ClInclude Include="Weapon.h" />

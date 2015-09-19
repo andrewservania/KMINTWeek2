@@ -63,8 +63,9 @@ Graph::Graph(FWApplication* _application)
 	cow = new Cow(1);													// Create a cow
 	rabbit = new Rabbit();												// Create a rabbit 
 
-	 pill = new Pill();
-	 weapon = new Weapon();
+	pill = new Pill();													// Create a pill at a random location
+	weapon = new Weapon();												// Create a weapon at a random location
+
 	cow->setCurrentNode(graphNodes.at(rand() % 8));					    // Put the cow on a random node on the screen
 	rabbit->setCurrentNode(graphNodes.at(rand() % 8));					// Put the rabbit on a random node on the screen
 	
@@ -73,6 +74,12 @@ Graph::Graph(FWApplication* _application)
 
 	UpdateShortPathDescription();										// Update the shortest path label with the shortest path based on the cow and rabbit's current node
 
+	// TODO: 1) Implement a cow search for weapon state
+	// TODO: In the cow search for weapon state, in the Enter() method the shortestPath should be calculated
+	// TODO: but the cow should not move immediately to the rabbit current node. On the other hand the cow
+	// TODO: should move towards the rabbit on a step-by-step basis using for example a simple counter.
+	// TODO: Create A rabbit Wandering state class 
+	// TODO: Create A rabbit Fleeing state.
 }
 
 Graph::~Graph()

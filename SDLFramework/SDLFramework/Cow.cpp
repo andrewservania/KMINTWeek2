@@ -17,10 +17,8 @@ Cow::Cow(int id) : BaseGameEntity(id)
 	// Add sample code here that is responsible for updating the cow
 	// Set up the state machine
 	stateMachine = new StateMachine<Cow>(this);
-
 	stateMachine->SetCurrentState(CowWanderingState::Instance());
 	//stateMachine->SetGlobalState()
-
 	//TODO: Add pill and weapon on the screen
 	//TODO: 1) Create new kind of counter to trigger a SearchForWeaponState. This has to be triggered in the WanderingState
 	//TODO: 2) Arm the rabbit class with the BaseGameEntity class

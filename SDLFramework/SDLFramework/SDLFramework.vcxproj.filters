@@ -41,12 +41,6 @@
     <ClCompile Include="BaseGameEntity.cpp">
       <Filter>Week2</Filter>
     </ClCompile>
-    <ClCompile Include="CowWanderingState.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CowSearchForWeaponState.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Dashboard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -54,6 +48,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Weapon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CowWanderingState.cpp">
+      <Filter>Week2</Filter>
+    </ClCompile>
+    <ClCompile Include="CowSearchForWeaponState.cpp">
+      <Filter>Week2</Filter>
+    </ClCompile>
+    <ClCompile Include="RabbitWanderingState.cpp">
+      <Filter>Week2</Filter>
+    </ClCompile>
+    <ClCompile Include="RabbitFleeingState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -110,6 +116,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Weapon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RabbitWanderingState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RabbitFleeingState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -5,7 +5,6 @@ CowSearchForWeaponState::CowSearchForWeaponState()
 {
 }
 
-
 void CowSearchForWeaponState::Enter(Cow* cow)
 {
 }

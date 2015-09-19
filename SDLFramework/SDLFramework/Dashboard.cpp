@@ -25,6 +25,6 @@ void Dashboard::Update()
 	FWApplication::GetInstance()->DrawText(shortestPathLabel, 200, 500);
 	CowStateLabel(Graph::cow->GetCurrentState());
 	FWApplication::GetInstance()->DrawText(cowStateLabel, 150, 150);
-	//RabbitStateLabel(Graph::rabbit->GetCurrentState());
+	RabbitStateLabel(Graph::rabbit->GetCurrentState());
 	FWApplication::GetInstance()->DrawText(rabbitStateLabel, 150, 200);
 }

@@ -1,6 +1,6 @@
 #include "Rabbit.h"
 #include "Graph.h"
-
+#include "RabbitWanderingState.h"
 
 Rabbit::Rabbit()
 {
@@ -8,6 +8,9 @@ Rabbit::Rabbit()
 	mApplication->AddRenderable(this);
 	mX = 500;
 	mY = 400;
+	stateMachine = new StateMachine<Rabbit>(this);
+	stateMachine->SetCurrentState(RabbitWanderingState::Instance());
+
 }
 
 Rabbit::~Rabbit()
@@ -16,6 +19,8 @@ Rabbit::~Rabbit()
 
 void Rabbit::Update(float deltaTime)
 {
+	stateMachine->Update();
+
 																	// If Cow is on the same node as the rabbit. 
 	if (Graph::cow->getCurrentNode()->id == currentNode->id)
 	{
