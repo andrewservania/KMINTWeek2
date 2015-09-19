@@ -69,17 +69,7 @@ void Cow::OnClick(SDL_Event& event)
 // Execute code when rabbit has been left clicked upon
 void Cow::OnLeftClick(SDL_Event &event)
 {	
-	shared_ptr<AStar> aStar = make_shared<AStar>();
 
-	// Calculate the shortest path based on the current node of both the cow(start) and the rabbit(goal)
-	auto shortestPath = aStar->GetShortestPath(currentNode, Graph::rabbit->getCurrentNode());
-
-	while (!shortestPath.empty())
-	{
-		Node* step = shortestPath.top();		// Get the next node to go to.	
-		this->setCurrentNode(step);					// Set the cow's node to the next node to go to
-		shortestPath.pop();
-	}
 }
 
 // Execute code when rabbit has been right clicked upon
