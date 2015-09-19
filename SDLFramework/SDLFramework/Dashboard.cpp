@@ -11,7 +11,7 @@ Dashboard::Dashboard()
 {
 	ApplicationInformation("Andrew Servania - KMINT Week 2");
 	ShortestPathLabel("");
-	RabbitStateLabel("No state implemented yet");
+
 }
 
 
