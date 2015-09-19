@@ -7,12 +7,13 @@ CowWanderingState::CowWanderingState()
 	counter = 0;
 }
 
-
+// Do the necessary preparations to enter the Cow Wandering State
 void CowWanderingState::Enter(Cow* cow)
 {
 
 }
 
+// Execute the code correspesonding to the Cow Wandering state
 void CowWanderingState::Execute(Cow* cow)
 {
 	if (counter == 50)
@@ -27,10 +28,10 @@ void CowWanderingState::Execute(Cow* cow)
 	counter++;
 }
 
+// Do the necessary cleanups and close ups before leaving the Cow Wandering State
 void CowWanderingState::Exit(Cow* cow)
 {
 }
-
 
 
 CowWanderingState::~CowWanderingState()

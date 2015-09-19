@@ -9,7 +9,8 @@ using namespace std;
 Cow* Graph::cow;
 Rabbit* Graph::rabbit;
 vector<Node*> Graph::graphNodes;
-
+Pill* Graph::pill;
+Weapon* Graph::weapon;
 
 Graph::Graph(FWApplication* _application)
 {

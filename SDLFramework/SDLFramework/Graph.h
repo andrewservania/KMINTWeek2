@@ -9,8 +9,9 @@ class Graph
 public:
 	static Cow* cow;
 	static Rabbit* rabbit;
-	Pill* pill;
-	Weapon* weapon;
+	static Pill* pill;
+	static Weapon* weapon;
+
 	Node* node1;
 	Node* node2;
 	Node* node3;
@@ -19,6 +20,7 @@ public:
 	Node* node6;
 	Node* node7;
 	Node* node8;
+
 	static std::vector<Node*> graphNodes;
 
 	Graph(FWApplication* _application);
