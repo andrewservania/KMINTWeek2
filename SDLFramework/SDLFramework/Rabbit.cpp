@@ -20,7 +20,6 @@ Rabbit::~Rabbit()
 void Rabbit::Update(float deltaTime)
 {
 	stateMachine->Update();
-
 																	// If Cow is on the same node as the rabbit. 
 	if (Graph::cow->getCurrentNode()->id == currentNode->id)
 	{

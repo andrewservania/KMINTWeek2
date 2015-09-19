@@ -9,8 +9,11 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
-    <Filter Include="Week2">
+    <Filter Include="States">
       <UniqueIdentifier>{6469432c-2a1e-411f-a745-f6b8fe556dad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\States">
+      <UniqueIdentifier>{43a9a536-e27c-4336-8d46-1da926d58f2e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -38,9 +41,6 @@
     <ClCompile Include="Graph.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BaseGameEntity.cpp">
-      <Filter>Week2</Filter>
-    </ClCompile>
     <ClCompile Include="Dashboard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -51,15 +51,24 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CowWanderingState.cpp">
-      <Filter>Week2</Filter>
+      <Filter>States</Filter>
     </ClCompile>
     <ClCompile Include="CowSearchForWeaponState.cpp">
-      <Filter>Week2</Filter>
+      <Filter>States</Filter>
     </ClCompile>
     <ClCompile Include="RabbitWanderingState.cpp">
-      <Filter>Week2</Filter>
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="CowSearchForPillState.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="CowChaseRabbitState.cpp">
+      <Filter>States</Filter>
     </ClCompile>
     <ClCompile Include="RabbitFleeingState.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseGameEntity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -101,13 +110,7 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="StateMachine.h">
-      <Filter>Week2</Filter>
-    </ClInclude>
-    <ClInclude Include="CowWanderingState.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CowSearchForWeaponState.h">
-      <Filter>Header Files</Filter>
+      <Filter>States</Filter>
     </ClInclude>
     <ClInclude Include="Dashboard.h">
       <Filter>Header Files</Filter>
@@ -123,6 +126,18 @@
     </ClInclude>
     <ClInclude Include="RabbitFleeingState.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CowChaseRabbitState.h">
+      <Filter>Header Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="CowSearchForPillState.h">
+      <Filter>Header Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="CowSearchForWeaponState.h">
+      <Filter>Header Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="CowWanderingState.h">
+      <Filter>Header Files\States</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,6 +1,6 @@
 #pragma once
 #include "State.h"
-
+#include <assert.h>
 template<class T>
 class StateMachine
 {

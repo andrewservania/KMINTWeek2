@@ -1,11 +1,17 @@
 #pragma once
 #include "State.h"
 #include "Cow.h"
+#include <stack>
+#include "Node.h"
 
 class CowSearchForWeaponState :
 	public State<Cow>
 {
+private:
+	std::stack<Node*> shortestPath;
+	int stepTimer;
 public:
+	
 	CowSearchForWeaponState();
 	~CowSearchForWeaponState();
 	

@@ -1,4 +1,6 @@
-#include "CowSearchForWeaponState.h"
+#include "CowChaseRabbitState.h"
+#include "Graph.h"
+#include "CowWanderingState.h"
 #include "AStar.h"
 #include "Graph.h"
 #include "CowWanderingState.h"
@@ -6,24 +8,23 @@
 
 using namespace std;
 
-CowSearchForWeaponState::CowSearchForWeaponState()
+CowChaseRabbitState::CowChaseRabbitState()
 {
 }
 
-CowSearchForWeaponState::~CowSearchForWeaponState()
+
+CowChaseRabbitState::~CowChaseRabbitState()
 {
 }
 
-void CowSearchForWeaponState::Enter(Cow* cow)
+void CowChaseRabbitState::Enter(Cow* cow)
 {
 	stepTimer = 0;
 	shared_ptr<AStar> astar = make_shared<AStar>();
-
-	shortestPath = astar->GetShortestPath(cow->getCurrentNode(), Graph::weapon->GetCurrentNode());
-
+	shortestPath = astar->GetShortestPath(cow->getCurrentNode(), Graph::rabbit->getCurrentNode());
 }
 
-void CowSearchForWeaponState::Execute(Cow* cow)
+void CowChaseRabbitState::Execute(Cow* cow)
 {
 	if (stepTimer == 50)
 	{
@@ -41,7 +42,6 @@ void CowSearchForWeaponState::Execute(Cow* cow)
 	stepTimer++;
 }
 
-void CowSearchForWeaponState::Exit(Cow* cow)
+void CowChaseRabbitState::Exit(Cow* cow)
 {
 }
-

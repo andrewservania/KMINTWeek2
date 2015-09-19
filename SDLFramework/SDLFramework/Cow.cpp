@@ -19,11 +19,9 @@ Cow::Cow(int id) : BaseGameEntity(id)
 	stateMachine = new StateMachine<Cow>(this);
 	stateMachine->SetCurrentState(CowWanderingState::Instance());
 	//stateMachine->SetGlobalState()
-	//TODO: Add pill and weapon on the screen
-	//TODO: 1) Create new kind of counter to trigger a SearchForWeaponState. This has to be triggered in the WanderingState
-	//TODO: 2) Arm the rabbit class with the BaseGameEntity class
-	//TODO: 3) Make sure the rabbit can also change from state (For example a fleeing state) You'll have to delay the screen in terms of refresh rate in order to show it
-	//TODO: 4) Make sure you put state labels for the cow and rabbit and make sure to update them accordingly!
+	// TODO: 3) Make sure the rabbit can also change from state (For example a fleeing state) You'll have to delay the screen in terms of refresh rate in order to show it
+	// TODO: 4) Make sure you put state labels for the cow and rabbit and make sure to update them accordingly!
+
 }
 
 

@@ -78,8 +78,6 @@ Graph::Graph(FWApplication* _application)
 	// TODO: In the cow search for weapon state, in the Enter() method the shortestPath should be calculated
 	// TODO: but the cow should not move immediately to the rabbit current node. On the other hand the cow
 	// TODO: should move towards the rabbit on a step-by-step basis using for example a simple counter.
-	// TODO: Create A rabbit Wandering state class 
-	// TODO: Create A rabbit Fleeing state.
 }
 
 Graph::~Graph()

@@ -14,5 +14,6 @@ public:
 	void Update(float deltaTime) override;
 	void Draw() override;
 	void SetCurrentNode(Node* newNode);
+	Node* GetCurrentNode() { return currentNode; }
 };
 

@@ -1,29 +1,30 @@
-#include "CowSearchForWeaponState.h"
+#include "CowSearchForPillState.h"
 #include "AStar.h"
 #include "Graph.h"
-#include "CowWanderingState.h"
+#include "CowChaseRabbitState.h"
 #include <memory>
 
 using namespace std;
 
-CowSearchForWeaponState::CowSearchForWeaponState()
+CowSearchForPillState::CowSearchForPillState()
 {
 }
 
-CowSearchForWeaponState::~CowSearchForWeaponState()
+
+CowSearchForPillState::~CowSearchForPillState()
 {
 }
 
-void CowSearchForWeaponState::Enter(Cow* cow)
+void CowSearchForPillState::Enter(Cow* cow)
 {
 	stepTimer = 0;
 	shared_ptr<AStar> astar = make_shared<AStar>();
 
-	shortestPath = astar->GetShortestPath(cow->getCurrentNode(), Graph::weapon->GetCurrentNode());
+	shortestPath = astar->GetShortestPath(cow->getCurrentNode(), Graph::pill->GetCurrentNode());
 
 }
 
-void CowSearchForWeaponState::Execute(Cow* cow)
+void CowSearchForPillState::Execute(Cow* cow)
 {
 	if (stepTimer == 50)
 	{
@@ -34,14 +35,13 @@ void CowSearchForWeaponState::Execute(Cow* cow)
 			stepTimer = 0;
 		}
 		else{
-			cow->GetFSM()->ChangeState(CowWanderingState::Instance());
+			cow->GetFSM()->ChangeState(CowChaseRabbitState::Instance());
 		}
 	}
 
 	stepTimer++;
 }
 
-void CowSearchForWeaponState::Exit(Cow* cow)
+void CowSearchForPillState::Exit(Cow* cow)
 {
 }
-

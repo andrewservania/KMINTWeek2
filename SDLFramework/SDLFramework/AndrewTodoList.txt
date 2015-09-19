@@ -1,0 +1,4 @@
+1) Disable automatic respawn of rabbit on random location
+2) Disable automatic respawn of pill and weapon on random location when cow or rabbit has moved to the same node as one of them.
+3) Fix Label update. Shortest path should only be visible if when the cow is chasing the rabbit. Afterwards it should disappear.
+4) 

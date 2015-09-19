@@ -8,6 +8,8 @@ class CowWanderingState :
 {
 private:
 	int counter;
+	int boredom;
+
 public:
 	CowWanderingState();
 	~CowWanderingState();
