@@ -3,6 +3,8 @@
 #include "Cow.h"
 #include <stack>
 #include "Node.h"
+#include "Cow.h"
+#include "Rabbit.h"
 
 class CowChaseRabbitState :
 	public State<Cow>
@@ -10,6 +12,7 @@ class CowChaseRabbitState :
 private:
 	int stepTimer;
 	std::stack<Node*> shortestPath;
+	void UpdateShortestPathLabel(Cow*cow, Rabbit* rabbbit);
 public:
 	CowChaseRabbitState();
 	~CowChaseRabbitState();

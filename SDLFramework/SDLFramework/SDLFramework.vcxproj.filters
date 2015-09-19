@@ -9,11 +9,17 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
-    <Filter Include="States">
-      <UniqueIdentifier>{6469432c-2a1e-411f-a745-f6b8fe556dad}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\States">
       <UniqueIdentifier>{43a9a536-e27c-4336-8d46-1da926d58f2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameEntities">
+      <UniqueIdentifier>{7e3cf5d0-3059-4e52-a2fe-02c11a91e996}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GameEntities">
+      <UniqueIdentifier>{d2b5fb81-96b6-4099-9e27-3bffac28242c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\States">
+      <UniqueIdentifier>{6469432c-2a1e-411f-a745-f6b8fe556dad}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -32,12 +38,6 @@
     <ClCompile Include="AStar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Cow.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Rabbit.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Graph.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -51,25 +51,31 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CowWanderingState.cpp">
-      <Filter>States</Filter>
+      <Filter>Source Files\States</Filter>
     </ClCompile>
     <ClCompile Include="CowSearchForWeaponState.cpp">
-      <Filter>States</Filter>
+      <Filter>Source Files\States</Filter>
     </ClCompile>
     <ClCompile Include="RabbitWanderingState.cpp">
-      <Filter>States</Filter>
+      <Filter>Source Files\States</Filter>
     </ClCompile>
     <ClCompile Include="CowSearchForPillState.cpp">
-      <Filter>States</Filter>
+      <Filter>Source Files\States</Filter>
     </ClCompile>
     <ClCompile Include="CowChaseRabbitState.cpp">
-      <Filter>States</Filter>
+      <Filter>Source Files\States</Filter>
     </ClCompile>
     <ClCompile Include="RabbitFleeingState.cpp">
-      <Filter>States</Filter>
+      <Filter>Source Files\States</Filter>
     </ClCompile>
     <ClCompile Include="BaseGameEntity.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\GameEntities</Filter>
+    </ClCompile>
+    <ClCompile Include="Cow.cpp">
+      <Filter>Source Files\GameEntities</Filter>
+    </ClCompile>
+    <ClCompile Include="Rabbit.cpp">
+      <Filter>Source Files\GameEntities</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -82,9 +88,6 @@
     <ClInclude Include="FWApplication.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="IGameObject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Node.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -94,23 +97,14 @@
     <ClInclude Include="AStar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Cow.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Rabbit.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Graph.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BaseGameEntity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="State.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="StateMachine.h">
-      <Filter>States</Filter>
+      <Filter>Source Files\States</Filter>
     </ClInclude>
     <ClInclude Include="Dashboard.h">
       <Filter>Header Files</Filter>
@@ -119,12 +113,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Weapon.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="RabbitWanderingState.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="RabbitFleeingState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CowChaseRabbitState.h">
@@ -139,5 +127,28 @@
     <ClInclude Include="CowWanderingState.h">
       <Filter>Header Files\States</Filter>
     </ClInclude>
+    <ClInclude Include="IGameObject.h">
+      <Filter>Header Files\GameEntities</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseGameEntity.h">
+      <Filter>Header Files\GameEntities</Filter>
+    </ClInclude>
+    <ClInclude Include="Cow.h">
+      <Filter>Header Files\GameEntities</Filter>
+    </ClInclude>
+    <ClInclude Include="Rabbit.h">
+      <Filter>Header Files\GameEntities</Filter>
+    </ClInclude>
+    <ClInclude Include="RabbitFleeingState.h">
+      <Filter>Header Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="RabbitWanderingState.h">
+      <Filter>Header Files\States</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="AndrewTodoList.txt">
+      <Filter>Source Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

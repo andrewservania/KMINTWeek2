@@ -6,6 +6,8 @@ class RabbitFleeingState :
 	public State<Rabbit>
 {
 public:
+	int timer;
+	bool fled;
 	RabbitFleeingState();
 	~RabbitFleeingState();
 

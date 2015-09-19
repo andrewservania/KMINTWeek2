@@ -3,6 +3,7 @@
 #include "Graph.h"
 #include "CowWanderingState.h"
 #include <memory>
+#include "Dashboard.h"
 
 using namespace std;
 
@@ -20,7 +21,7 @@ void CowSearchForWeaponState::Enter(Cow* cow)
 	shared_ptr<AStar> astar = make_shared<AStar>();
 
 	shortestPath = astar->GetShortestPath(cow->getCurrentNode(), Graph::weapon->GetCurrentNode());
-
+	UpdateShortestPathLabel(cow, Graph::weapon);
 }
 
 void CowSearchForWeaponState::Execute(Cow* cow)
@@ -35,6 +36,8 @@ void CowSearchForWeaponState::Execute(Cow* cow)
 		}
 		else{
 			cow->GetFSM()->ChangeState(CowWanderingState::Instance());
+			Graph::weapon->PutOnRandomLocation();
+
 		}
 	}
 
@@ -45,3 +48,20 @@ void CowSearchForWeaponState::Exit(Cow* cow)
 {
 }
 
+void CowSearchForWeaponState::UpdateShortestPathLabel(Cow* cow, Weapon* weapon)
+{
+	shared_ptr<AStar> aStar = make_shared<AStar>();
+	auto shortPath = aStar->GetShortestPath(cow->getCurrentNode(), weapon->GetCurrentNode());
+	string shortestPathLabel = "Shortest path from cow to rabbit: ";
+	while (!shortPath.empty())
+	{
+		Node* step = shortPath.top();
+
+		shortestPathLabel += to_string(step->id).c_str();
+
+		shortPath.pop();
+		if (!shortPath.empty())
+			shortestPathLabel += " -> ";
+	}
+	Dashboard::Instance()->ShortestPathLabel(shortestPathLabel);
+}

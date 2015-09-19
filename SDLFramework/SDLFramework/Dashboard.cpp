@@ -10,7 +10,7 @@ std::string Dashboard::rabbitStateLabel;
 Dashboard::Dashboard()
 {
 	ApplicationInformation("Andrew Servania - KMINT Week 2");
-	ShortestPathLabel("Shortest path from cow to rabbit: No calculations made yet");
+	ShortestPathLabel("");
 	RabbitStateLabel("No state implemented yet");
 }
 

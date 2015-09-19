@@ -3,7 +3,8 @@
 #include "Graph.h"
 #include "CowChaseRabbitState.h"
 #include <memory>
-
+#include "Dashboard.h"
+#include "Node.h"
 using namespace std;
 
 CowSearchForPillState::CowSearchForPillState()
@@ -17,11 +18,12 @@ CowSearchForPillState::~CowSearchForPillState()
 
 void CowSearchForPillState::Enter(Cow* cow)
 {
+	
 	stepTimer = 0;
 	shared_ptr<AStar> astar = make_shared<AStar>();
-
 	shortestPath = astar->GetShortestPath(cow->getCurrentNode(), Graph::pill->GetCurrentNode());
 
+	UpdateShortestPathLabel(cow, Graph::pill);
 }
 
 void CowSearchForPillState::Execute(Cow* cow)
@@ -36,6 +38,7 @@ void CowSearchForPillState::Execute(Cow* cow)
 		}
 		else{
 			cow->GetFSM()->ChangeState(CowChaseRabbitState::Instance());
+			Graph::pill->PutOnRandomLocation();
 		}
 	}
 
@@ -44,4 +47,22 @@ void CowSearchForPillState::Execute(Cow* cow)
 
 void CowSearchForPillState::Exit(Cow* cow)
 {
+}
+
+void CowSearchForPillState::UpdateShortestPathLabel(Cow* cow, Pill* pill)
+{
+	shared_ptr<AStar> aStar = make_shared<AStar>();
+	auto shortPath = aStar->GetShortestPath(cow->getCurrentNode(), pill->GetCurrentNode());
+	string shortestPathLabel = "Shortest path from cow to pill: ";
+	while (!shortPath.empty())
+	{
+		Node* step = shortPath.top();
+
+		shortestPathLabel += to_string(step->id).c_str();
+
+		shortPath.pop();
+		if (!shortPath.empty())
+			shortestPathLabel += " -> ";
+	}
+	Dashboard::Instance()->ShortestPathLabel(shortestPathLabel);
 }

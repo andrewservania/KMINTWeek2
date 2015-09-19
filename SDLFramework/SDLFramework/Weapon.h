@@ -14,5 +14,6 @@ public:
 	void Draw() override;
 	void SetCurrentNode(Node* newNode);
 	Node* GetCurrentNode() { return currentNode; }
+	void PutOnRandomLocation();
 };
 

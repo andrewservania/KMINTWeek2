@@ -19,10 +19,6 @@ Pill::~Pill()
 // Check for changes regarding the pill
 void Pill::Update(float deltaTime)
 {
-	// If the rabbit or the cow is on the same spot as the pill,
-	// respawn the pill somewhere else.
-	if (Graph::cow->currentNode->id == currentNode->id || Graph::rabbit->currentNode->id == currentNode->id)
-		SetCurrentNode(Graph::graphNodes.at(rand() % Graph::graphNodes.size()));
 }
 
 // Draw the pill on screen
@@ -37,4 +33,10 @@ void Pill::SetCurrentNode(Node* newNode)
 	currentNode = newNode;
 	mX = currentNode->GetBoundingBox().x;
 	mY = currentNode->GetBoundingBox().y;
+}
+
+// Respawn the pill somewhere else.
+void Pill::PutOnRandomLocation()
+{
+	SetCurrentNode(Graph::graphNodes.at(rand() % Graph::graphNodes.size()));
 }

@@ -3,12 +3,16 @@
 #include "Cow.h"
 #include "Node.h"
 #include <stack>
+#include "Cow.h"
+#include "Pill.h"
+
 class CowSearchForPillState :
 	public State<Cow>
 {
 private:
 	int stepTimer;
 	std::stack<Node*> shortestPath;
+	void UpdateShortestPathLabel(Cow* cow, Pill* pill);
 public:
 	CowSearchForPillState();
 	~CowSearchForPillState();
