@@ -22,7 +22,7 @@ public:
 	void Enter(Cow* cow) override;
 	void Execute(Cow* cow) override;
 	void Exit(Cow* cow) override;
-	std::string GetStateName() override { return "Search For Weapon State"; }
+	std::string GetStateName() override { return "Search For Weapon"; }
 	static CowSearchForWeaponState* Instance()
 	{
 		static CowSearchForWeaponState instance;

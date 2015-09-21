@@ -30,12 +30,10 @@ void Cow::Update(float deltaTime)
 	stateMachine->Update();
 }
 
-
 Cow::~Cow()
 {
 	delete stateMachine;
 }
-
 
 void Cow::setCurrentNode(Node* node)
 {

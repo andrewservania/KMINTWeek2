@@ -19,7 +19,7 @@ public:
 	void Enter(Cow* cow) override;
 	void Execute(Cow* cow) override;
 	void Exit(Cow* cow) override;
-	std::string GetStateName() override { return "Search For Pill State"; }
+	std::string GetStateName() override { return "Search For Pill"; }
 	static CowSearchForPillState* Instance()
 	{
 		static CowSearchForPillState instance;

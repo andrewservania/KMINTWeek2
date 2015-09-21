@@ -30,15 +30,11 @@ void CowSearchForPillState::Execute(Cow* cow)
 {
 	if (stepTimer == 50)
 	{
-		if (!shortestPath.empty())					// If shortest path is empty, then go to the goal node step by step
+		if (!shortestPath.empty())					 // If shortest path is empty, then go to the goal node step by step
 		{
 			cow->setCurrentNode(shortestPath.top()); // Cow will walk to the top next node
 			shortestPath.pop();						 // Now remove the top next node
 			stepTimer = 0;
-		}
-		else{
-			cow->GetFSM()->ChangeState(CowChaseRabbitState::Instance());
-			Graph::pill->PutOnRandomLocation();
 		}
 	}
 
