@@ -14,7 +14,7 @@ public:
 	void Enter(Rabbit* rabbit) override;
 	void Execute(Rabbit* rabbit) override;
 	void Exit(Rabbit* rabbit) override;
-	std::string GetStateName() override { return "Fleeing State"; }
+	std::string GetStateName() override { return "Fleeing"; }
 	static RabbitFleeingState* Instance()
 	{
 		static RabbitFleeingState instance;

@@ -12,7 +12,7 @@ public:
 	void Enter(Rabbit* cow) override;
 	void Execute(Rabbit* cow) override;
 	void Exit(Rabbit* cow) override;
-	std::string GetStateName() override { return "Wandering State"; }
+	std::string GetStateName() override { return "Wandering"; }
 	static RabbitWanderingState* Instance()
 	{
 		static RabbitWanderingState instance;
