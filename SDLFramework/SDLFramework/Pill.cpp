@@ -9,8 +9,7 @@ Pill::Pill()
 	// Put the pill at a random location
 	SetCurrentNode(Graph::graphNodes.at(rand() % Graph::graphNodes.size()));
 
-	while (Graph::cow->getCurrentNode()->id == currentNode->id ||
-		Graph::rabbit->getCurrentNode()->id == currentNode->id)
+	while (Graph::rabbit->getCurrentNode()->id == currentNode->id)
 		SetCurrentNode(Graph::graphNodes.at(rand() % Graph::graphNodes.size()));
 
 	mApplication->AddRenderable(this);
@@ -36,7 +35,7 @@ void Pill::Update(float deltaTime)
 // Draw the pill on screen
 void Pill::Draw()
 {
-	mApplication->DrawTexture(mTexture, mX, mY, 100, 100);
+	mApplication->DrawTexture(mTexture, mX, mY, 50, 50);
 };
 
 // Put the pill at a new location

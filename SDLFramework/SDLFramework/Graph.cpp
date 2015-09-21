@@ -60,24 +60,21 @@ Graph::Graph(FWApplication* _application)
 	graphNodes.push_back(node7);
 	graphNodes.push_back(node8);
 
-	cow = new Cow(1);													// Create a cow
-	rabbit = new Rabbit(2);												// Create a rabbit 
-	cow->setCurrentNode(graphNodes.at(rand() % 8));					    // Put the cow on a random node on the screen
+	rabbit = new Rabbit(1);												// Create a rabbit 
 	rabbit->setCurrentNode(graphNodes.at(rand() % 8));					// Put the rabbit on a random node on the screen
-
-	while (cow->getCurrentNode()->id == rabbit->getCurrentNode()->id)	// if rabbit's current node is equal to the node of the code, pick a new node for the rabbit
-		rabbit->setCurrentNode(graphNodes.at(rand() % 8));
-
 	
 	pill = new Pill();													// Create a pill at a random location
 	weapon = new Weapon();												// Create a weapon at a random location
 
-	UpdateShortPathDescription();										// Update the shortest path label with the shortest path based on the cow and rabbit's current node
+	cow = new Cow(2);													// Create a cow
+	cow->setCurrentNode(graphNodes.at(rand() % 8));					    // Put the cow on a random node on the screen
 
-	// TODO: 1) Implement a cow search for weapon state
-	// TODO: In the cow search for weapon state, in the Enter() method the shortestPath should be calculated
-	// TODO: but the cow should not move immediately to the rabbit current node. On the other hand the cow
-	// TODO: should move towards the rabbit on a step-by-step basis using for example a simple counter.
+	while (cow->getCurrentNode()->id == rabbit->getCurrentNode()->id ||
+		cow->getCurrentNode()->id == pill->GetCurrentNode()->id ||
+		cow->getCurrentNode()->id  == weapon->GetCurrentNode()->id)	   // Put the cow on a random location as long as its not the same location as the rabbit,
+		cow->setCurrentNode(graphNodes.at(rand() % 8));				   // pill and weapon
+
+	UpdateShortPathDescription();										// Update the shortest path label with the shortest path based on the cow and rabbit's current node
 }
 
 Graph::~Graph()

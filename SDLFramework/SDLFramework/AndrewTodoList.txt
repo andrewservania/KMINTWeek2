@@ -3,6 +3,6 @@
 3) DONE Fix Label update. Shortest path should only be visible if when the cow is chasing the rabbit. Afterwards it should disappear.
 
 Tasks for Sunday, 20th of September 2015
-4) The PILL or WEAPON should change the cow's state, NOT the COW itself. Right now, it works but it is not logical.
-5) When the game starts all for game entities cow, rabbit, pill and weapon should spawn on a random location but never on the same spot as any of them
-6) During the runtime, if a pill, weapon or rabbit respawns, it should not respawn on the location as any of the three. Including the cow!
+4) DONE The PILL or WEAPON should change the cow's state, NOT the COW itself. Right now, it works but it is not logical.
+5) DONE When the game starts, all the game entities cow, rabbit, pill and weapon should spawn on a random location but never on the same spot as any of them.
+6) DONE During runtime, if a pill, weapon or rabbit respawns, it should never respawn on the location as any of the three. Including the cow!

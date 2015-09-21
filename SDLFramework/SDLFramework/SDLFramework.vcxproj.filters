@@ -44,12 +44,6 @@
     <ClCompile Include="Dashboard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Pill.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Weapon.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="CowWanderingState.cpp">
       <Filter>Source Files\States</Filter>
     </ClCompile>
@@ -75,6 +69,12 @@
       <Filter>Source Files\GameEntities</Filter>
     </ClCompile>
     <ClCompile Include="Rabbit.cpp">
+      <Filter>Source Files\GameEntities</Filter>
+    </ClCompile>
+    <ClCompile Include="Pill.cpp">
+      <Filter>Source Files\GameEntities</Filter>
+    </ClCompile>
+    <ClCompile Include="Weapon.cpp">
       <Filter>Source Files\GameEntities</Filter>
     </ClCompile>
   </ItemGroup>
@@ -109,12 +109,6 @@
     <ClInclude Include="Dashboard.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Pill.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Weapon.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="CowChaseRabbitState.h">
       <Filter>Header Files\States</Filter>
     </ClInclude>
@@ -144,6 +138,12 @@
     </ClInclude>
     <ClInclude Include="RabbitWanderingState.h">
       <Filter>Header Files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="Pill.h">
+      <Filter>Header Files\GameEntities</Filter>
+    </ClInclude>
+    <ClInclude Include="Weapon.h">
+      <Filter>Header Files\GameEntities</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

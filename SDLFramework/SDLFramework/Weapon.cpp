@@ -9,8 +9,7 @@ Weapon::Weapon()
 	// as the cow or rabbit
 	SetCurrentNode(Graph::graphNodes.at(rand() % Graph::graphNodes.size()));
 
-	while (Graph::cow->getCurrentNode()->id == currentNode->id ||
-		Graph::rabbit->getCurrentNode()->id == currentNode->id ||
+	while (Graph::rabbit->getCurrentNode()->id == currentNode->id ||
 		Graph::pill->GetCurrentNode()->id == currentNode->id)
 		SetCurrentNode(Graph::graphNodes.at(rand() % Graph::graphNodes.size()));
 
@@ -32,7 +31,7 @@ void Weapon::Update(float deltaTime)
 
 void Weapon::Draw()
 {
-	mApplication->DrawTexture(mTexture, mX,mY, 100, 100);
+	mApplication->DrawTexture(mTexture, mX,mY, 50, 50);
 };
 
 // Put the weapon at a new location

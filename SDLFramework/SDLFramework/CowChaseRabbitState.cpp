@@ -38,7 +38,6 @@ void CowChaseRabbitState::Execute(Cow* cow)
 			stepTimer = 0;
 		}
 		else{
-			Graph::rabbit->GetFSM()->ChangeState(RabbitFleeingState::Instance());
 			cow->GetFSM()->ChangeState(CowWanderingState::Instance());
 		}
 	}

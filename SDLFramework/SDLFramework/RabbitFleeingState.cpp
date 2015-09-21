@@ -22,20 +22,25 @@ void RabbitFleeingState::Enter(Rabbit* rabbit)
 void RabbitFleeingState::Execute(Rabbit* rabbit)
 {
 
-	if (fled == false)
-	{
-		Node* newLocation = Graph::graphNodes.at(rand() % 8);					// Put the rabbit in a random location
-		rabbit->setCurrentNode(newLocation);
-		while (Graph::cow->getCurrentNode()->id == rabbit->getCurrentNode()->id) // if it's still on the same location as the cow. Choose a different location for the rabbit.
-		{
-			newLocation = Graph::graphNodes.at(rand() % 8);
-			rabbit->setCurrentNode(newLocation);
-		}
-		fled = true;
-	}
 		
-	if (timer == 100)
+	if (timer == 80)
 	{
+
+		if (fled == false)
+		{
+			Node* newLocation = Graph::graphNodes.at(rand() % 8);					// Put the rabbit in a random location
+			rabbit->setCurrentNode(newLocation);
+			while (rabbit->getCurrentNode()->id == Graph::cow->getCurrentNode()->id ||
+				rabbit->getCurrentNode()->id == Graph::pill->GetCurrentNode()->id ||
+				rabbit->getCurrentNode()->id == Graph::weapon->GetCurrentNode()->id) // if it's still on the same location as the cow. Choose a different location for the rabbit.
+			{
+				newLocation = Graph::graphNodes.at(rand() % 8);
+				rabbit->setCurrentNode(newLocation);
+			}
+			fled = true;
+		}
+
+
 		rabbit->GetFSM()->ChangeState(RabbitWanderingState::Instance());
 		timer = 0;
 	}
