@@ -7,6 +7,21 @@
 #include "CowWanderingState.h"
 using namespace std;
 
+////////////////////////////////////////////////////////////////////////////////////////////////////
+/// <summary>	Constructor. </summary>
+/// Create a cow by
+/// 1) Load a picture of the cow.
+/// 2) add the cow to items that have to be displayed on screen.  
+/// 3) Set the current node of the cow at random as long as its not at the same location as the  
+///    rabbit, pill and weapon.
+/// 4) instantiate the state machine of the cow.  
+/// 5) Set the cow's state to CowChaseRabbit State  
+/// 6) 
+/// <remarks>	Andrew Servania,. </remarks>
+///
+/// <param name="id">	The identifier. </param>
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
 Cow::Cow(int id) : BaseGameEntity(id)
 {
 	mTexture = mApplication->LoadTexture("cow-1.png");
@@ -24,16 +39,39 @@ Cow::Cow(int id) : BaseGameEntity(id)
 
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////
+/// <summary>	Updates the cow and the state machine of the cow </summary>
+///
+/// <remarks>	Andrew Servania,. </remarks>
+///
+/// <param name="deltaTime">	The delta time. </param>
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void Cow::Update(float deltaTime)
 {
 	stateMachine->Update();
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////
+/// <summary>	Destructor.
+/// 			delete the state machine of cow.
+/// 			  </summary>
+///
+/// <remarks>	Andrew Servania,. </remarks>
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
 Cow::~Cow()
 {
 	delete stateMachine;
 }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+/// <summary>	Sets current node and the coordinates of the cow on screen. </summary>
+///
+/// <remarks>	Andrew Servania,. </remarks>
+///
+/// <param name="node">	[in,out] If non-null, the node. </param>
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void Cow::setCurrentNode(Node* node)
 {
@@ -42,13 +80,27 @@ void Cow::setCurrentNode(Node* node)
 	 mY = node->GetBoundingBox().y;
 }
 
-// Draw cow texture
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+/// <summary>	Draw a picture of the cow on screen. </summary>
+///
+/// <remarks>	Andrew Servania,. </remarks>
+////////////////////////////////////////////////////////////////////////////////////////////////////
+	
 void Cow::Draw()
 {
 	mApplication->DrawTexture(mTexture, mX, mY,100, 100);
 }
 
-//Handle all clicks
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+/// <summary>	Handle all clicks registered on the cow.</summary>
+///
+/// <remarks>	Andrew Servania,. </remarks>
+///
+/// <param name="event">	[in,out] The event. </param>
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
 void Cow::OnClick(SDL_Event& event)
 {
 	// Handle clicks that are made within the range in which the cow is situated on
@@ -64,13 +116,27 @@ void Cow::OnClick(SDL_Event& event)
 	}
 }
 
-// Execute code when rabbit has been left clicked upon
+////////////////////////////////////////////////////////////////////////////////////////////////////
+/// <summary>	Execute code when rabbit has been left clicked upon. </summary>
+///
+/// <remarks>	Andrew Servania,. </remarks>
+///
+/// <param name="event">	[in,out] The event. </param>
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
 void Cow::OnLeftClick(SDL_Event &event)
 {	
 
 }
 
-// Execute code when rabbit has been right clicked upon
+////////////////////////////////////////////////////////////////////////////////////////////////////
+/// <summary>	Execute code when rabbit has been right clicked upon. </summary>
+///
+/// <remarks>	Andrew Servania,. </remarks>
+///
+/// <param name="event">	[in,out] The event. </param>
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
 void Cow::OnRightClick(SDL_Event &event)
 {
 	printf("Right-clicked on cow!\n");

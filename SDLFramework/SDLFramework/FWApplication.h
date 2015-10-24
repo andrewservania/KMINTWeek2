@@ -9,28 +9,6 @@ struct SDL_Renderer;
 struct SDL_Window;
 struct SDL_Texture;
 typedef struct _TTF_Font TTF_Font;
-//struct SDL_Event;
-
-//#define SDL_DRAW_PUTPIXEL_BPP(A, B, C)  \
-//*(A(B(Uint8*)super->pixels + (y0+y)*super->pitch +               \
-//                                          (x0+x)*SDL_DRAW_BPP)) = C; \
-//*(A(B(Uint8*)super->pixels + (y0-y)*super->pitch +               \
-//                                          (x0+x)*SDL_DRAW_BPP)) = C; \
-//*(A(B(Uint8*)super->pixels + (y0+y)*super->pitch +               \
-//                                          (x0-x)*SDL_DRAW_BPP)) = C; \
-//*(A(B(Uint8*)super->pixels + (y0-y)*super->pitch +               \
-//                                          (x0-x)*SDL_DRAW_BPP)) = C;
-//
-//
-//#define SDL_DRAW_PUTPIXEL \
-//  SDL_DRAW_PUTPIXEL_BPP(0+,1+,colorbyte1)   \
-//  if (SDL_BYTEORDER == SDL_BIG_ENDIAN) {   \
-//    SDL_DRAW_PUTPIXEL_BPP(0+,0+,colorbyte2)   \
-//    SDL_DRAW_PUTPIXEL_BPP(0+,2+,colorbyte0) \
-//          }else{                                   \
-//    SDL_DRAW_PUTPIXEL_BPP(0+,0+,colorbyte0)   \
-//    SDL_DRAW_PUTPIXEL_BPP(0+,2+,colorbyte2) \
-//          }
 
 struct Color
 {

@@ -6,18 +6,27 @@ class StateMachine
 {
 private:
 
-	// A pointer to the agent that owns this instance
+	/// <summary>	A pointer to the agent that owns this instance. </summary>
 	T* owner;
 
+	/// <summary>	The current state. </summary>
 	State<T>* currentState;
 
-	// A record of the last state the agent was in
+	/// <summary>	A record of the last state the agent was in. </summary>
 	State<T>* previousState;
 
-	// This state logic is called every time the FSM is updated
+	/// <summary>	This state logic is called every time the FSM is updated. </summary>
 	State<T>* globalState;
 
 public:
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	/// <summary>	Constructor. </summary>
+	///
+	/// <remarks>	Andrew Servania,. </remarks>
+	///
+	/// <param name="owner">	[in,out] If non-null, the owner. </param>
+	////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	StateMachine(T* owner) : owner(owner),
 							 currentState(nullptr),
@@ -30,7 +39,12 @@ public:
 	void SetGlobalState(State<T>* s) { globalState = s; }
 	void SetPreviousState(State<T>* s) { previousState = s; }
 
-	// Call this to update the FSM
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	/// <summary>	Call this to update the FSM. </summary>
+	///
+	/// <remarks>	Andrew Servania,. </remarks>
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	void Update() const
 	{
 		// if a global state exists, call its execute method
@@ -40,7 +54,14 @@ public:
 		if (currentState) currentState->Execute(owner);
 	}
 
-	// Change to a new state
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	/// <summary>	Change to a new state. </summary>
+	///
+	/// <remarks>	Andrew Servania,. </remarks>
+	///
+	/// <param name="newState">	[in,out] If non-null, state of the new. </param>
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	void ChangeState(State<T>* newState)
 	{
 		assert(newState && "<StateMachine::ChangeState>: trying to change to a null state");
@@ -58,7 +79,12 @@ public:
 		currentState->Enter(owner);
 	}
 
-	// change state back to the previous state
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+	/// <summary>	change state back to the previous state. </summary>
+	///
+	/// <remarks>	Andrew Servania,. </remarks>
+	////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	void RevertToPreviousState()
 	{
 		ChangeState(previousState);
@@ -69,8 +95,5 @@ public:
 	State<T>* GlobalState() const { return globalState; }
 	State<T>* PreviousState() const { return previousState; }
 
-	// Return true if the current state's type is equal to the type of the
-	// class passed as a parameter
-	//bool isInState(const State<class T>& st) const;
 };
 
