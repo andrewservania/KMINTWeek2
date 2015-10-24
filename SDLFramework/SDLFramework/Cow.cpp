@@ -8,15 +8,14 @@
 using namespace std;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-/// <summary>	Constructor. </summary>
+/// <summary>	Constructor.
 /// Create a cow by
 /// 1) Load a picture of the cow.
 /// 2) add the cow to items that have to be displayed on screen.  
 /// 3) Set the current node of the cow at random as long as its not at the same location as the  
 ///    rabbit, pill and weapon.
 /// 4) instantiate the state machine of the cow.  
-/// 5) Set the cow's state to CowChaseRabbit State  
-/// 6) 
+/// 5) Set the cow's state to CowChaseRabbit State   </summary>
 /// <remarks>	Andrew Servania,. </remarks>
 ///
 /// <param name="id">	The identifier. </param>
