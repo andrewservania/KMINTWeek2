@@ -2,14 +2,14 @@
 #include "Graph.h"
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-/// <summary>	Default constructor.  			
+/// <summary>	Default constructor.
 /// 			Create a weapon by providing an id, a location on the arena.
 ///
 /// 			1) A picture of a weapon is loaded to screen.
-/// 			2) The weapon is added to items that must be shown on screen.  
-/// 			3) Set the location of the weapon on a node at random as long as its  
+/// 			2) The weapon is added to items that must be shown on screen.
+/// 			3) Set the location of the weapon on a node at random as long as its
 /// 			   not on the same location as the rabbit, the cow and the pill.
-/// 			
+///
 /// <remarks>	Andrew Servania,. </remarks>
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -17,7 +17,7 @@ Weapon::Weapon()
 {
 	mTexture = mApplication->LoadTexture("gun-metal.png");
 
-	// Put the weapon at a random location as long as its not at the same location 
+	// Put the weapon at a random location as long as its not at the same location
 	// as the cow or rabbit
 	SetCurrentNode(Graph::graphNodes.at(rand() % Graph::graphNodes.size()));
 
@@ -42,7 +42,7 @@ Weapon::~Weapon()
 /// <summary>	Update the weapon.
 /// 			If the rabbit is standing on the same location as the weapon
 /// 			and the rabbit has been searching for a weapon, consume the pill and go into a
-/// 			Wandering state.	
+/// 			Wandering state.
 /// 			/summary>
 ///
 /// <remarks>	Andrew Servania,. </remarks>
@@ -66,7 +66,7 @@ void Weapon::Update(float deltaTime)
 
 void Weapon::Draw()
 {
-	mApplication->DrawTexture(mTexture, mX,mY, 50, 50);
+	mApplication->DrawTexture(mTexture, mX, mY, 50, 50);
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////

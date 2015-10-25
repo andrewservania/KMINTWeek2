@@ -11,10 +11,10 @@ using namespace std;
 /// <summary>	Constructor.
 /// Create a cow by
 /// 1) Load a picture of the cow.
-/// 2) add the cow to items that have to be displayed on screen.  
-/// 3) Set the current node of the cow at random as long as its not at the same location as the  
+/// 2) add the cow to items that have to be displayed on screen.
+/// 3) Set the current node of the cow at random as long as its not at the same location as the
 ///    rabbit, pill and weapon.
-/// 4) instantiate the state machine of the cow.  
+/// 4) instantiate the state machine of the cow.
 /// 5) Set the cow's state to CowChaseRabbit State   </summary>
 /// <remarks>	Andrew Servania,. </remarks>
 ///
@@ -32,10 +32,6 @@ Cow::Cow(int id) : BaseGameEntity(id)
 	// Set up the state machine
 	stateMachine = new StateMachine<Cow>(this);
 	stateMachine->SetCurrentState(CowWanderingState::Instance());
-	//stateMachine->SetGlobalState()
-	// TODO: 3) Make sure the rabbit can also change from state (For example a fleeing state) You'll have to delay the screen in terms of refresh rate in order to show it
-	// TODO: 4) Make sure you put state labels for the cow and rabbit and make sure to update them accordingly!
-
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -74,23 +70,21 @@ Cow::~Cow()
 
 void Cow::setCurrentNode(Node* node)
 {
-	 currentNode = node; 
-	 mX = node->GetBoundingBox().x;
-	 mY = node->GetBoundingBox().y;
+	currentNode = node;
+	mX = node->GetBoundingBox().x;
+	mY = node->GetBoundingBox().y;
 }
-
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 /// <summary>	Draw a picture of the cow on screen. </summary>
 ///
 /// <remarks>	Andrew Servania,. </remarks>
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-	
+
 void Cow::Draw()
 {
-	mApplication->DrawTexture(mTexture, mX, mY,100, 100);
+	mApplication->DrawTexture(mTexture, mX, mY, 100, 100);
 }
-
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 /// <summary>	Handle all clicks registered on the cow.</summary>
@@ -124,8 +118,7 @@ void Cow::OnClick(SDL_Event& event)
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void Cow::OnLeftClick(SDL_Event &event)
-{	
-
+{
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////

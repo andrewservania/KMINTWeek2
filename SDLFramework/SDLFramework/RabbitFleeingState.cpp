@@ -24,7 +24,6 @@ RabbitFleeingState::RabbitFleeingState()
 
 RabbitFleeingState::~RabbitFleeingState()
 {
-
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -56,11 +55,8 @@ void RabbitFleeingState::Enter(Rabbit* rabbit)
 
 void RabbitFleeingState::Execute(Rabbit* rabbit)
 {
-
-		
 	if (timer == 80)
 	{
-
 		if (fled == false)
 		{
 			Node* newLocation = Graph::graphNodes.at(rand() % 8);					// Put the rabbit in a random location
@@ -74,7 +70,6 @@ void RabbitFleeingState::Execute(Rabbit* rabbit)
 			}
 			fled = true;
 		}
-
 
 		rabbit->GetFSM()->ChangeState(RabbitWanderingState::Instance());
 		timer = 0;

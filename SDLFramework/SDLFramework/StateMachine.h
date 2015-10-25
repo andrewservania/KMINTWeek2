@@ -29,10 +29,9 @@ public:
 	////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	StateMachine(T* owner) : owner(owner),
-							 currentState(nullptr),
-							 previousState(nullptr),
-							 globalState(nullptr){}
-
+		currentState(nullptr),
+		previousState(nullptr),
+		globalState(nullptr){}
 
 	// Use these methods to initialize the FSM
 	void SetCurrentState(State<T>* s) { currentState = s; }
@@ -94,6 +93,4 @@ public:
 	State<T>* CurrentState() const { return currentState; }
 	State<T>* GlobalState() const { return globalState; }
 	State<T>* PreviousState() const { return previousState; }
-
 };
-

@@ -23,4 +23,3 @@ public:
 	StateMachine<Cow>* GetFSM() const { return stateMachine; }
 	std::string GetCurrentState() { return stateMachine->CurrentState()->GetStateName(); }
 };
-

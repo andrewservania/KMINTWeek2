@@ -2,7 +2,6 @@
 #include "State.h"
 #include "Cow.h"
 
-
 class CowWanderingState :
 	public State<Cow>
 {
@@ -23,4 +22,3 @@ public:
 		return &instance;
 	}
 };
-

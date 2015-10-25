@@ -5,7 +5,7 @@ int BaseGameEntity::nextValidID = 0;
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 /// <summary>	Constructor. </summary>
 /// Create a base game entity by providing it an id.
-/// 
+///
 /// <remarks>	Andrew Servania,. </remarks>
 ///
 /// <param name="id">	The identifier. </param>
@@ -15,7 +15,6 @@ BaseGameEntity::BaseGameEntity(int id)
 {
 	SetID(id);
 }
-
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 /// <summary>	Destructor. </summary>
@@ -42,5 +41,4 @@ void BaseGameEntity::SetID(int val)
 		id = val;
 		nextValidID++;
 	}
-
 }

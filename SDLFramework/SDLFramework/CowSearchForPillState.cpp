@@ -39,7 +39,6 @@ CowSearchForPillState::~CowSearchForPillState()
 
 void CowSearchForPillState::Enter(Cow* cow)
 {
-	
 	stepTimer = 0;
 	shared_ptr<AStar> astar = make_shared<AStar>();
 	shortestPath = astar->GetShortestPath(cow->getCurrentNode(), Graph::pill->GetCurrentNode());

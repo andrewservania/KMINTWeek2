@@ -30,7 +30,7 @@ void CowWanderingState::Enter(Cow* cow)
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-/// <summary>	Execute the code correspesonding to the Cow Wandering state. 
+/// <summary>	Execute the code correspesonding to the Cow Wandering state.
 /// 			Cow just wanders around by hoping onto neighboring nodes.
 /// 			Every step (node visited) the cow takes, its boredom level will go up by 1.
 /// 			When the cow's boredom level has reached 10, it will go in a SearchForPill state.
@@ -57,10 +57,9 @@ void CowWanderingState::Execute(Cow* cow)
 
 	if (boredom == 10){
 		cow->GetFSM()->ChangeState(CowSearchForPillState::Instance());
-		
+
 		Dashboard::Instance()->CowBoredomLevel(boredom);
 	}
-
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////

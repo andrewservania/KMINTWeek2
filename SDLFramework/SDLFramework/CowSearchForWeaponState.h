@@ -15,10 +15,10 @@ private:
 	void UpdateShortestPathLabel(Cow* cow, Weapon* weapon);
 
 public:
-	
+
 	CowSearchForWeaponState();
 	~CowSearchForWeaponState();
-	
+
 	void Enter(Cow* cow) override;
 	void Execute(Cow* cow) override;
 	void Exit(Cow* cow) override;
@@ -29,4 +29,3 @@ public:
 		return &instance;
 	}
 };
-

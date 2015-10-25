@@ -24,7 +24,7 @@ int Dashboard::cowBoredomLevel;
 using namespace std;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-/// <summary>	Default constructor. Initialize the dashboard with some explanatory description. 
+/// <summary>	Default constructor. Initialize the dashboard with some explanatory description.
 /// 			</summary>
 ///
 /// <remarks>	Andrew Servania,. </remarks>
@@ -34,15 +34,15 @@ Dashboard::Dashboard()
 {
 	ApplicationInformation("Andrew Servania - KMINT Week 2");
 
-		comment1 = "The cow and the rabbit start in a Wandering state.";
-		comment2 = "While the cow wanders around, its boredom level raises.";
-		comment3 = "When it reaches level 10, it goes on a search for a pill.";
-		comment4 = "The pill triggers the cow to go and chase the rabbit.";
-		comment5 = "When the cow reaches the rabbit, the rabbit goes into a Fleeing state,";
-		comment6 = "jumps to a random location and both the cow and the rabbit go back to a Wandering state.";
+	comment1 = "The cow and the rabbit start in a Wandering state.";
+	comment2 = "While the cow wanders around, its boredom level raises.";
+	comment3 = "When it reaches level 10, it goes on a search for a pill.";
+	comment4 = "The pill triggers the cow to go and chase the rabbit.";
+	comment5 = "When the cow reaches the rabbit, the rabbit goes into a Fleeing state,";
+	comment6 = "jumps to a random location and both the cow and the rabbit go back to a Wandering state.";
 
-		cowBoredomLevel = 0;
-		ShortestPathLabel("");
+	cowBoredomLevel = 0;
+	ShortestPathLabel("");
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -79,6 +79,4 @@ void Dashboard::Update()
 
 	FWApplication::GetInstance()->DrawText("Cow boredom level: " + to_string(cowBoredomLevel), 300, 380);
 	FWApplication::GetInstance()->DrawText(shortestPathLabel, 300, 400);
-
-
 }

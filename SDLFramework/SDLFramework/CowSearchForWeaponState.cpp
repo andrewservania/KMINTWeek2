@@ -68,7 +68,6 @@ void CowSearchForWeaponState::Execute(Cow* cow)
 		else{
 			cow->GetFSM()->ChangeState(CowWanderingState::Instance());
 			Graph::weapon->PutOnRandomLocation();
-
 		}
 	}
 

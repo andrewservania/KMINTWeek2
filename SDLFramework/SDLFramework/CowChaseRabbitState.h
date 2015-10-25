@@ -26,6 +26,4 @@ public:
 		static CowChaseRabbitState instance;
 		return &instance;
 	}
-
 };
-

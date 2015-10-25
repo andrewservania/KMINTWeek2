@@ -9,7 +9,6 @@
 /// <remarks>	Andrew Servania,. </remarks>
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
 RabbitWanderingState::RabbitWanderingState()
 {
 }
@@ -49,11 +48,9 @@ void RabbitWanderingState::Enter(Rabbit* rabbit)
 
 void RabbitWanderingState::Execute(Rabbit* rabbit)
 {
-
 	if (Graph::cow->GetCurrentState() == "Chase Rabbit" &&
 		Graph::cow->getCurrentNode()->id == rabbit->getCurrentNode()->id)
 		rabbit->GetFSM()->ChangeState(RabbitFleeingState::Instance());
-	
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
